@@ -1,5 +1,13 @@
 <?php
-    
+    include_once('DataManager.php');
+    $dataManager = new DataManager();
+
+    $EntrArrey = $dataManager->GetEtreprises();
+
+    foreach($EntrArrey as $key=>$obj)
+    {
+        echo $obj->getName();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
