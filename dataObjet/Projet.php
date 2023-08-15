@@ -1,12 +1,13 @@
 <?php
-include_once('');
+include_once('Langage.php');
+
 class Projet{
     private $id;
     private $titre;
     private $text;
     private $adressImg;
 
-    function __construct($id, $titre, $text, $adressImg)
+    function __construct($id, $titre, $text, $adressImg, $Langages)
     {
         $this->id = $id;
         $this->titre = $titre;

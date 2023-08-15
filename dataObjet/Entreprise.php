@@ -11,6 +11,6 @@ class Entreprise
         $this->adress = $adr;
     }
     public function GetId(){return $this->id;}
-    public function GetName(){return $this->GetName;}
+    public function GetName(){return $this->name;}
     public function GetAdress(){return $this->adress;}
 }

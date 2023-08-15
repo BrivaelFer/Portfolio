@@ -1,5 +1,7 @@
 <?php
 include_once('Entreprise.php');
+include_once('Langage.php');
+
 class Experience
 {
     private string $id;
@@ -8,14 +10,17 @@ class Experience
     private string $startDate;
     private string $endDate;
     private string $tache;
+    private Array $langages;
+    
 
-    function __construct(string $id,string $titre, string $startDate, string $endDate, string $tache, Entreprise $ent) {
+    function __construct(string $id,string $titre, string $startDate, string $endDate, string $tache, Entreprise $ent, Array $lang) {
         $this->id = $id;
         $this->titre = $titre;
         $this->entreprise = $ent;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->tache = $tache;
+        $this->langage = $lang;
     }
 
     public function GetId(){return $this->id;}

@@ -2,10 +2,10 @@
 include_once('dataObjet/Entreprise.php');
 include_once('dataObjet/Experience.php');
 include_once('dataObjet/Langage.php');
-include_once('dataObjet/LProjet.php');
+include_once('dataObjet/Projet.php');
 class DataManager
 {
-    public function GetEtreprises()
+    public function GetAllEtreprises()
     {
         $result = [
             ['id_entre' => '0', 'name_entre' => 'nomEntre0', 'adr_entre' => 'Adress0'],
@@ -18,6 +18,28 @@ class DataManager
         foreach($result as $key=>$row){
             $entreprises[] = new Entreprise($row['id_entre'], $row['name_entre'], $row['adr_entre']);
         }
+        return $entreprises;
+    }
+    public function GetEtreprise($idEntr)
+    {
+
+    }
+
+    public function GetAllExp()
+    {
+        
+    }
+    public function GetExp($idExp)
+    {
+
+    }
+    public function GetAllLangage()
+    {
+
+    }
+    public function GetLangage($idLang)
+    {
+
     }
 }
 
