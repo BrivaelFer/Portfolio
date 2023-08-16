@@ -6,13 +6,15 @@ class Projet{
     private $titre;
     private $text;
     private $adressImg;
+    private array $langages;
 
-    function __construct($id, $titre, $text, $adressImg, $Langages)
+    function __construct($id, $titre, $text, $adressImg, array $langages)
     {
         $this->id = $id;
         $this->titre = $titre;
         $this->text = $text;
         $this->adressImg = $adressImg;
+        $this->langages = $langages;
     }
 
     public function GetId()
