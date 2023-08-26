@@ -180,12 +180,13 @@ class DataManager
         $langs = [];
         foreach($pre->fetchAll() as $key=>$row)
         {
-            $lang = new Langage(
+            $langs[] = new Langage(
                 $row['id_lang'],
                 $row['name_lang'],
                 $row['lev_lang']
             );
         }
+        return $langs;
     }
 
     private function GetProjetLang($idPro)
@@ -198,12 +199,57 @@ class DataManager
         $langs = [];
         foreach($pre->fetchAll() as $key=>$row)
         {
-            $lang = new Langage(
+            $langs[] = new Langage(
                 $row['id_lang'],
                 $row['name_lang'],
                 $row['lev_lang']
             );
         }
+        return $langs;
+    }
+
+    public function AddProjet($titre, $text, $img, Array $langs, $idExp = NULL )
+    {
+
+    }
+
+    public function GetAllProjets()
+    {
+        $s = "SELECT * FROM projet";
+
+        $pre =$this->connect()->query($s);
+
+        $projets = [];
+        foreach($pre->fetchAll() as $key=>$row)
+        {
+            $projets[] = new Projet(
+                $row['id_projet'],
+                $row['titre_projet'],
+                $row['text_projet'],
+                $row['img_projet'],
+                GetProjetLang($row['id_projet']),
+                $row['id_exp_projet']
+            );
+        }
+        return $projets;
+    }
+
+    public function GetProjet($idPro)
+    {
+        $s = "SELECT * FROM projet
+        WHERE id_projet = ?";
+
+        $pre =$this->connect()->query($s);
+        $projet = $pre->exucute([$idPro])->fetch();
+       
+        return new Projet(
+            $projet['id_projet'],
+            $projet['titre_projet'],
+            $projet['text_projet'],
+            $projet['img_projet'],
+            GetProjetLang($projet['id_projet']),
+            $projet['id_exp_projet']
+        );
     }
 }
 

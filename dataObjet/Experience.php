@@ -28,4 +28,6 @@ class Experience
     public function GetStartDate(){return $this->startDate;}
     public function GetEndDate(){return $this->endDate;}
     public function GetTache(){return $this->tache;}
+    public function GetEntr(){return $this->entreprise;}
+    public function GetLang(){return $this->langages;}
 }

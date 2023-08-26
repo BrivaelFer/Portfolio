@@ -1,5 +1,6 @@
 <?php
 include_once('Langage.php');
+include_once('Experience.php');
 
 class Projet{
     private $id;
@@ -7,14 +8,16 @@ class Projet{
     private $text;
     private $adressImg;
     private array $langages;
+    private Experience $exp;
 
-    function __construct($id, $titre, $text, $adressImg, array $langages)
+    function __construct($id, $titre, $text, $adressImg, array $langages, Experience $ex = NULL)
     {
         $this->id = $id;
         $this->titre = $titre;
         $this->text = $text;
         $this->adressImg = $adressImg;
         $this->langages = $langages;
+        $this->exp = $ex;
     }
 
     public function GetId()
@@ -32,5 +35,13 @@ class Projet{
     public function GetAdressImg()
     {
         return $this->adressImg;
+    }
+    public function GetLangs()
+    {
+        return $this->langage;
+    }
+    public function GetExp()
+    {
+        return $this->exp;
     }
 }
