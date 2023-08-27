@@ -19,6 +19,8 @@ class DataManager
         }
         return $db;
     }
+
+    
     /**Ajout d'entreprise */
     public function AddEtreprises($name, $adress)
     {
@@ -69,7 +71,7 @@ class DataManager
         $s = "SELECT * FROM entreprise
         WHERE id_entr = $idEntr";
         $pre = $this->connect()->query($s);
-        $result = fetch();
+        $result = $pre->fetch();
 
         return new Entreprise($result['id_entr'], $result['name_entr'], $result['adr_entr']);
     }
@@ -100,7 +102,6 @@ class DataManager
         $s = "SELECT * FROM experience";
 
         $pre = $this->connect()->query($s);
-
         $exps = [];
         foreach($pre->fetchAll() as $key=>$row){
             $exps[] = new Experience(
@@ -109,19 +110,22 @@ class DataManager
                 $row['start_exp'],
                 $row['end_exp'],
                 $row['tache_exp'],
-                GetEtreprise($row['id_entr_exp']),
-                GetExpLang($row['id_exp'])
+                $this->GetEtreprise($row['id_entr_exp']),
+                $this->GetExpLang($row['id_exp'])
             );
         }
-        return $entreprises;
+        return $exps;
     }
 
     public function GetExp($idExp)
     {
+        if($idExp == '')
+            return NULL;
         $s = "SELECT * FROM experience
         WHERE id_Exp = $idExp";
 
-        $exp = $this->connect()->query($s)->fetch();
+        $pre = $this->connect()->query($s);
+        $exp= $pre->fetch();
 
         return new Experience(
             $exp['id_exp'], 
@@ -129,8 +133,8 @@ class DataManager
             $exp['start_exp'],
             $exp['end_exp'],
             $exp['tache_exp'],
-            GetEtreprise($exp['id_entr_exp']),
-            GetExpLang($exp['id_exp'])
+            $this->GetEtreprise($exp['id_entr_exp']),
+            $this->GetExpLang($exp['id_exp'])
         );
     }
 
@@ -227,8 +231,8 @@ class DataManager
                 $row['titre_projet'],
                 $row['text_projet'],
                 $row['img_projet'],
-                GetProjetLang($row['id_projet']),
-                $row['id_exp_projet']
+                $this->GetProjetLang($row['id_projet']),
+                $this->GetExp($row['id_exp_projet'])
             );
         }
         return $projets;

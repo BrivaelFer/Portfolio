@@ -8,9 +8,9 @@ class Projet{
     private $text;
     private $adressImg;
     private array $langages;
-    private Experience $exp;
+    private $exp;
 
-    function __construct($id, $titre, $text, $adressImg, array $langages, Experience $ex = NULL)
+    function __construct($id, $titre, $text, $adressImg, array $langages, $ex = NULL)
     {
         $this->id = $id;
         $this->titre = $titre;
@@ -38,7 +38,7 @@ class Projet{
     }
     public function GetLangs()
     {
-        return $this->langage;
+        return $this->langages;
     }
     public function GetExp()
     {

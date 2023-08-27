@@ -20,7 +20,7 @@ class Experience
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->tache = $tache;
-        $this->langage = $lang;
+        $this->langages = $lang;
     }
 
     public function GetId(){return $this->id;}

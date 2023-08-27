@@ -1,6 +1,8 @@
 <?php
     include_once('DataManager.php');
-    include_once('Module/*.php');
+    include_once('Module/ExperienceModule.php');
+    include_once('Module/LangageModul.php');
+    include_once('Module/ProjetModule.php');
     
     class ModulManager
     {

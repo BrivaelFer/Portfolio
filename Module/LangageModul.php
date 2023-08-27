@@ -1,5 +1,5 @@
 <?php 
-    include_once('//dataObjet/Langage.php');
+    include_once(__DIR__ .'/../dataObjet/Langage.php');
     
     function HtmlLang(Langage $lang)
     {

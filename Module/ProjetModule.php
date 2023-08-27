@@ -1,5 +1,5 @@
 <?php
-   include_once('//dataObjet/Projet.php');
+   include_once(__DIR__ .'/../dataObjet/Projet.php');
     
    function HtmlProjet(Projet $pro)
    {
@@ -24,18 +24,19 @@
                     ?>
                 </div>
                 <?php
-                    if($pro->GetExp != NULL)
+                    
+                    if($pro->GetExp() != NULL)
                     {
                         $exp = $pro->GetExp();
-
+                        /**CORRIGER */
                         ?>
                         <div>
                             <p>Lieu de production:</p>
-                            <img src="src/img/entreprise/<?php echo $exp->GetExp()->GetName();?>"
-                            alt="logo <?php echo $exp->GetExp()->GetName();?>">
+                            <img src="src/img/entreprise/<?php echo $exp->GetEntr()->GetName();?>"
+                            alt="logo <?php echo $exp->GetEntr()->GetName();?>">
                             <p>
-                                <?php echo $exp->GetExp()->GetName();?> <br>
-                                <?php echo $exp->GetExp()->GetAdress();?>
+                                <?php echo $exp->GetEntr()->GetName();?> <br>
+                                <?php echo $exp->GetEntr()->GetAdress();?>
                             </p>
 
                         </div>
