@@ -16,6 +16,7 @@
         {
             ?> 
             <div class = "module" id = "langageModule">
+                <h2>Langages</h2>
                 <?php
                     foreach($this->DM->GetAllLangage() as $key=>$lang)
                     {
@@ -29,6 +30,7 @@
         public function AffichageProjet()
         {
             ?> 
+            <h2>Projets</h2>
             <div class = "module" id = "langageModule">
                 <?php
                     foreach($this->DM->GetAllProjets() as $key=>$pro)
@@ -42,6 +44,7 @@
         public function AffichageExperience()
         {
             ?> 
+            <h2>Experience</h2>
             <div class = "module" id = "langageModule">
                 <?php
                     foreach($this->DM->GetAllExp() as $key=>$exp)
