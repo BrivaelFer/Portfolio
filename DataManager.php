@@ -3,6 +3,8 @@ include_once('dataObjet/Entreprise.php');
 include_once('dataObjet/Experience.php');
 include_once('dataObjet/Langage.php');
 include_once('dataObjet/Projet.php');
+include_once('dataObjet/Formation.php');
+include_once('dataObjet/OganismeFormation.php');
 
 /**Récupérassion et insertion des donnée de la DB*/
 class DataManager
@@ -241,10 +243,10 @@ class DataManager
     public function GetProjet($idPro)
     {
         $s = "SELECT * FROM projet
-        WHERE id_projet = ?";
+            WHERE id_projet = ?";
 
         $pre =$this->connect()->query($s);
-        $projet = $pre->exucute([$idPro])->fetch();
+        $projet = $pre->execute([$idPro])->fetch();
        
         return new Projet(
             $projet['id_projet'],
@@ -254,6 +256,85 @@ class DataManager
             GetProjetLang($projet['id_projet']),
             $projet['id_exp_projet']
         );
+    }
+
+    private function GetOrgaFormation($idOrga)
+    {
+        $s = "SELECT * FROM orga_formation 
+            WHERE id_orga = ?;";
+
+        $pre = $this->connect()->query($s);
+        $orga = $pre->execute([$idOrga])->fetch();
+
+        return new OrganismeFormation(
+            (int)$orga['id_orga'],
+            $orga['name_orga'],
+            $orga['ville_orga'],
+            $orga['codep_orga'],
+            $orga['adr_orga']
+        );
+    }
+
+    public function GetAllFormation()
+    {
+        $s = "SELECT * FROM formation";
+
+        $pre =$this->connect()->query($s);
+
+        $formations = [];
+        foreach($pre->fetch() as $key => $row)
+        {
+            $formations[] = new Formation(
+                (int)$row['id_form'],
+                $row['inti_form'],
+                $row['start_date_form'],
+                $row['end_date_form'],
+                (bool)$row['form_end'],
+                $row['desc_form'],
+                GetFormLang($row['id_form']),
+                GetOrgaFormation($row['id_orga_form'])
+            );
+        }
+    }
+
+    public function GetFormation(int $idF)
+    {
+        $s = "SELECT * FROM formation
+            WHERE id_form = ?";
+        
+        $pre = $this->connect()->query($s);
+
+        $formation = $pre->execute([$idF])->fetch();
+
+        return new Formation(
+                (int)$formation['id_form'],
+                $formation['inti_form'],
+                $formation['start_date_form'],
+                $formation['end_date_form'],
+                (bool)$formation['form_end'],
+                $formation['desc_form'],
+                GetFormLang($formation['id_form']),
+                GetOrgaFormation($formation['id_orga_form'])
+        );
+    }
+
+    private function GetFormLang($idForm)
+    {
+        $s = "SELECT * FROM langage INNER JOIN utilise ON id_lang = id_lang_ut
+        WHERE id_form_ut = $idForm";
+
+        $pre = $this->connect()->query($s);
+
+        $langs = [];
+        foreach($pre->fetchAll() as $key=>$row)
+        {
+            $langs[] = new Langage(
+                $row['id_lang'],
+                $row['name_lang'],
+                $row['lev_lang']
+            );
+        }
+        return $langs;
     }
 }
 

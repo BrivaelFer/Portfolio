@@ -1,16 +1,18 @@
 <?php
 include_once('Langage.php');
 include_once('Experience.php');
+include_once('Formation.php');
 
 class Projet{
-    private $id;
-    private $titre;
-    private $text;
-    private $adressImg;
+    private int $id;
+    private string $titre;
+    private string $text;
+    private string $adressImg;
     private array $langages;
-    private $exp;
+    private Experience $exp;
+    private Formation $formation;
 
-    function __construct($id, $titre, $text, $adressImg, array $langages, $ex = NULL)
+    function __construct(int $id, string $titre, string $text, string $adressImg, array $langages, Experience $ex = NULL, Formation $formation)
     {
         $this->id = $id;
         $this->titre = $titre;
@@ -18,6 +20,7 @@ class Projet{
         $this->adressImg = $adressImg;
         $this->langages = $langages;
         $this->exp = $ex;
+        $this->formation = $formation;
     }
 
     public function GetId()

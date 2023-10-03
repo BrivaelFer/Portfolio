@@ -6,8 +6,27 @@ CREATE TABLE IF NOT EXISTS langage(
 
 CREATE TABLE IF NOT EXISTS entreprise(
     id_entr INT PRIMARY KEY auto_increment,
-    name_entr VARCHAR(50) NOT NULL UNIQUE,
+    name_entr VARCHAR(50) NOT NULL,
     adr_entr VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS orga_formation(
+    id_orga INT PRIMARY KEY auto_increment,
+    name_orga VARCHAR(50) NOT NULL,
+    ville_orga VARCHAR(50) NOT NULL,
+    codep_orga VARCHAR(50) NOT NULL,
+    adr_orga VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS formation(
+    id_form INT PRIMARY KEY auto_increment,
+    inti_form VARCHAR(255) NOT NULL,
+    start_date_form DATE NOT NULL,
+    end_date_form DATE NOT NULL,
+    form_end BOOLEAN NOT NULL,
+    desc_form TEXT NOT NULL,
+    id_orga_form INT NOT NULL,
+    FOREIGN KEY(id_orga_form) REFERENCES orga_formation(id_orga)
 );
 
 CREATE TABLE IF NOT EXISTS experience(
@@ -27,8 +46,9 @@ CREATE TABLE IF NOT EXISTS projet(
     text_projet VARCHAR(500) NOT NULL,
     img_projet VARCHAR(50) NOT NULL UNIQUE,
     id_exp_projet INT NULL,
-    FOREIGN KEY (id_exp_projet)
-    REFERENCES experience (id_exp)
+    id_form_projet INT NULL,
+    FOREIGN KEY (id_exp_projet) REFERENCES experience (id_exp),
+    FOREIGN KEY (id_form_projet) REFERENCES formation(id_form)
 );
 
 CREATE TABLE IF NOT EXISTS utilise(
