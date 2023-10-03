@@ -62,7 +62,7 @@ class DataManager
         return $entreprises;
     }
     /**
-     * argument : idExp = id d'une entreprise
+     * argument : idEntr = id d'une entreprise
      * 
      * Récupération des donnée d'une entreprise
      * 
@@ -77,7 +77,17 @@ class DataManager
 
         return new Entreprise($result['id_entr'], $result['name_entr'], $result['adr_entr']);
     }
-
+    /**
+     * arg : 
+     *      titre = titre experiance
+     *      idEntr = id d'une entreprise
+     *      start = date début expérience
+     *      end = date fin expérience
+     *      tache = string listant tache
+     *      idsLang = tableau id de langage
+     * 
+     * Ajoute une experiance à la BDD
+     */
     public function AddExp($titre, $idEntr, $start, $end, $tache, Array $idsLang)
     {
         $s = "INSERT INTO experience( titre_exp, start_exp, end_exp, tache_exp, id_entr_exp)
@@ -98,7 +108,11 @@ class DataManager
         }
         $pre = $this->connect()->query($s);
     }
-
+     /**
+      * Récupère les donnée de la table experience
+      *
+      * Retourne un tableau d'objets Experience
+      */
     public function GetAllExp()
     {
         $s = "SELECT * FROM experience";
@@ -118,7 +132,13 @@ class DataManager
         }
         return $exps;
     }
-
+    /**
+     * arg : idExp = id experience
+     * 
+     * Récupère les données d'une experience dont id = idExp
+     * 
+     * Retourne une objet Experience
+     */
     public function GetExp($idExp)
     {
         if($idExp == '')
