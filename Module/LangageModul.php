@@ -6,7 +6,7 @@
         ?>
             <div class = "blockLangage"  href = "">
                 <img class= "logoLang"
-                src = "src/img/lang/<?php echo $lang->GetName();?>.png" 
+                src = "rsc/img/logos/<?php echo $lang->GetImg();?>.png" 
                 alt = "Logo <?php echo $lang->GetName();?>.">
                 <h3 class = "NameLang" ><?php echo $lang->GetName();?></h3>
                 <div class = "level"></div>

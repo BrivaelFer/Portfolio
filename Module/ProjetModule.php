@@ -15,7 +15,7 @@
                         {
                             ?>
                             <div class = "blockLangMini" href = "">
-                                <img src="src/img/lang/<?php echo $lang->GetName();?>.png" 
+                                <img class="tinyImg" src="rsc/img/logos/<?php echo $lang->GetImg();?>.png" 
                                 alt="Logo <?php echo $lang->GetName();?>">
                                 <p class = "nameLangMini"><?php echo $lang->GetName();?></p>
                             </div>

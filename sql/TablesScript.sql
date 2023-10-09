@@ -1,7 +1,8 @@
 CREATE TABLE IF NOT EXISTS langage(
     id_lang INT PRIMARY KEY auto_increment,
     name_lang VARCHAR(50) NOT NULL UNIQUE,
-    lev_lang INT NOT NULL
+    lev_lang INT NOT NULL,
+    img_lang VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS entreprise(

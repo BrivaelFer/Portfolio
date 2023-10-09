@@ -55,4 +55,18 @@
             </div>
             <?php
         }
+        public function AffichageFromation()
+        {
+            ?>
+            <div>
+                <?php
+                foreach($this->DM->GetAllFormation() as $key=>$formation)
+                {
+                    HtmlFormation($formation);
+                }
+                ?>
+            </div>
+            
+            <?php
+        }
     }

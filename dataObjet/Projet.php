@@ -9,10 +9,10 @@ class Projet{
     private string $text;
     private string $adressImg;
     private array $langages;
-    private Experience $exp;
-    private Formation $formation;
+    private ?Experience $exp;
+    private ?Formation $formation;
 
-    function __construct(int $id, string $titre, string $text, string $adressImg, array $langages, Experience $ex = NULL, Formation $formation)
+    function __construct(int $id, string $titre, string $text, string $adressImg, array $langages, Experience $ex = null, Formation $formation = null)
     {
         $this->id = $id;
         $this->titre = $titre;

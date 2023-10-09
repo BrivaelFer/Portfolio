@@ -20,7 +20,7 @@
                         {
                             ?>
                                 <div>
-                                    <img src="src/img/lang/<?php echo $lang->GetName();?>.png" 
+                                    <img class="tinyImg" src="rsc/img/logos/<?php echo $lang->GetImg();?>.png" 
                                     alt="Logo <?php echo $lang->GetName();?>">
                                     <p><?php echo $lang->GetName();?></p>
                                 </div>

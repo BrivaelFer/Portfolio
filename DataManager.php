@@ -4,7 +4,7 @@ include_once('dataObjet/Experience.php');
 include_once('dataObjet/Langage.php');
 include_once('dataObjet/Projet.php');
 include_once('dataObjet/Formation.php');
-include_once('dataObjet/OganismeFormation.php');
+include_once('dataObjet/OrganismeFormation.php');
 
 /**Récupérassion et insertion des donnée de la DB*/
 class DataManager
@@ -171,13 +171,19 @@ class DataManager
 
     public function GetAllLangage()
     {
-        $s = "SELECT * FROM langage";
+        $s = "SELECT * FROM langage
+        ORDER BY lev_lang DESC";
 
         $pre = $this->connect()->query($s);
 
         $lang = [];
         foreach($pre->fetchAll() as $key=>$row){
-            $lang[] = new Langage($row['id_lang'], $row['name_lang'], $row['lev_lang']);
+            $lang[] = new Langage(
+                $row['id_lang'], 
+                $row['name_lang'], 
+                $row['lev_lang'],
+                $row['img_lang']
+                );
         }
         return $lang;
     }
@@ -192,7 +198,8 @@ class DataManager
         return new Langage(
             $lang['id_lang'], 
             $lang['name_lang'],
-            $lang['lev_lang']
+            $lang['lev_lang'],
+            $lang['img_lang']
         );
     }
 
@@ -209,7 +216,8 @@ class DataManager
             $langs[] = new Langage(
                 $row['id_lang'],
                 $row['name_lang'],
-                $row['lev_lang']
+                $row['lev_lang'],
+                $row['img_lang']
             );
         }
         return $langs;
@@ -228,7 +236,8 @@ class DataManager
             $langs[] = new Langage(
                 $row['id_lang'],
                 $row['name_lang'],
-                $row['lev_lang']
+                $row['lev_lang'],
+                $row['img_lang']
             );
         }
         return $langs;
@@ -254,7 +263,8 @@ class DataManager
                 $row['text_projet'],
                 $row['img_projet'],
                 $this->GetProjetLang($row['id_projet']),
-                $this->GetExp($row['id_exp_projet'])
+                $this->GetExp($row['id_exp_projet']),
+                $this->GetFormation($row['id_form_pro'])
             );
         }
         return $projets;
@@ -315,10 +325,14 @@ class DataManager
                 GetOrgaFormation($row['id_orga_form'])
             );
         }
+        return $formations;
     }
 
-    public function GetFormation(int $idF)
+    public function GetFormation($idF)
     {
+        if($idF == null || $idF == 'null')
+            return null;
+
         $s = "SELECT * FROM formation
             WHERE id_form = ?";
         
@@ -351,7 +365,8 @@ class DataManager
             $langs[] = new Langage(
                 $row['id_lang'],
                 $row['name_lang'],
-                $row['lev_lang']
+                $row['lev_lang'],
+                $row['img_lang']
             );
         }
         return $langs;
