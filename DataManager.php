@@ -283,7 +283,7 @@ class DataManager
             $projet['titre_projet'],
             $projet['text_projet'],
             $projet['img_projet'],
-            GetProjetLang($projet['id_projet']),
+            $this->GetProjetLang($projet['id_projet']),
             $projet['id_exp_projet']
         );
     }
@@ -321,8 +321,8 @@ class DataManager
                 $row['end_date_form'],
                 (bool)$row['form_end'],
                 $row['desc_form'],
-                GetFormLang($row['id_form']),
-                GetOrgaFormation($row['id_orga_form'])
+                $this->GetFormLang($row['id_form']),
+                $this->GetOrgaFormation($row['id_orga_form'])
             );
         }
         return $formations;
@@ -347,8 +347,8 @@ class DataManager
                 $formation['end_date_form'],
                 (bool)$formation['form_end'],
                 $formation['desc_form'],
-                GetFormLang($formation['id_form']),
-                GetOrgaFormation($formation['id_orga_form'])
+                $this->GetFormLang($formation['id_form']),
+                $this->GetOrgaFormation($formation['id_orga_form'])
         );
     }
 
