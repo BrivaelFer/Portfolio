@@ -264,7 +264,7 @@ class DataManager
                 $row['img_projet'],
                 $this->GetProjetLang($row['id_projet']),
                 $this->GetExp($row['id_exp_projet']),
-                $this->GetFormation($row['id_form_pro'])
+                $this->GetFormation($row['id_form_projet'])
             );
         }
         return $projets;
@@ -284,17 +284,18 @@ class DataManager
             $projet['text_projet'],
             $projet['img_projet'],
             $this->GetProjetLang($projet['id_projet']),
-            $projet['id_exp_projet']
+            $this->GetExp($projet['id_exp_projet']),
+            $this->GetFormation($projet['id_form_projet'])
         );
     }
 
     private function GetOrgaFormation($idOrga)
     {
         $s = "SELECT * FROM orga_formation 
-            WHERE id_orga = ?;";
+            WHERE id_orga = $idOrga;";
 
         $pre = $this->connect()->query($s);
-        $orga = $pre->execute([$idOrga])->fetch();
+        $orga = $pre->fetch();
 
         return new OrganismeFormation(
             (int)$orga['id_orga'],
@@ -312,14 +313,14 @@ class DataManager
         $pre =$this->connect()->query($s);
 
         $formations = [];
-        foreach($pre->fetch() as $key => $row)
+        foreach($pre->fetchAll() as $key => $row)
         {
             $formations[] = new Formation(
-                (int)$row['id_form'],
+                $row['id_form'],
                 $row['inti_form'],
                 $row['start_date_form'],
                 $row['end_date_form'],
-                (bool)$row['form_end'],
+                $row['form_end'],
                 $row['desc_form'],
                 $this->GetFormLang($row['id_form']),
                 $this->GetOrgaFormation($row['id_orga_form'])

@@ -30,6 +30,7 @@
             $modulManager->AffichageProjet();
             $modulManager->AffichageLangages();
             $modulManager->AffichageExperience();
+            $modulManager->AffichageFromation();
         ?>
     </body>
 </html>

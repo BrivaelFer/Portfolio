@@ -1,7 +1,29 @@
+/*Balise*/
 
+/*Class*/
 .tinyImg{
     width: 30px;
 }
 .logoLang{
-    width: 100px;
+    width: 80px;
+}
+.module{
+    display: flex;
+}
+.blockLangage{
+    padding: auto;
+    flex: 0 0 20%;
+    min-height: 135px;
+    margin: 20px;
+}
+.blockLangage h3{
+    margin: 0;
+    text-align: center;
+}
+
+/*ID*/
+#langageModule{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
