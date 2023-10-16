@@ -15,10 +15,18 @@
     flex: 0 0 20%;
     min-height: 135px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .blockLangage h3{
     margin: 0;
     text-align: center;
+}
+.blockProjet{
+    flex-wrap: wrap;
+    max-width: 50%;
+    min-width: 500px;
 }
 
 /*ID*/
