@@ -1,7 +1,7 @@
 <nav>
     
     <div class="navButton">
-        <p>Brivaël FER</p>
+        <h1>Brivaël FER</h1>
     </div>
     <div class="navButton">
         <p>Projets</p>

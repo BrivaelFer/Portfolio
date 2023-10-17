@@ -1,35 +1,98 @@
 /*Balise*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    background-color: rgb(17, 26, 19);
+    margin: 0;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: darkslategray;
+}
+nav div{
+    font-size: 18pt;
+    padding: 20px;
+    flex: 0 1 20%;
+    text-align: center;
+    border-left: 1px solid white;
+}
+nav p{
+    margin: auto;
+}
+h1{
+    font-size: 20pt;
+    margin: auto;
+}
 
 /*Class*/
+.content{
+    margin: 80px 15px 0px 15px;
+}
+.intro{
+    margin-right: 5%;
+    margin-left: 5%;
+}
 .tinyImg{
     width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.listLangages{
+    display: flex;
+    justify-content: left;
+}
+.blockLangMini{
+    margin-right: 10px;
+    text-align: center;
+}
+.blockLangMini p{
+    margin: 0;
 }
 .logoLang{
     width: 80px;
+    margin: auto;
 }
 .module{
     display: flex;
 }
+.blockProjet{
+    display: flex;
+    flex: 0 1 45%;
+    flex-wrap: wrap;
+    min-width: 500px;
+}
+.blockProjetIllu{
+    flex: 0 1 35%;
+}
+.blockProjetContent{
+    flex: 50%;
+}
+.blockProjetInfo{
+    display: flex;
+    justify-content: space-between;
+}
 .blockLangage{
-    padding: auto;
     flex: 0 0 20%;
     min-height: 135px;
     margin: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
+    justify-content: space-around;
+    
 }
 .blockLangage h3{
     margin: 0;
     text-align: center;
 }
-.blockProjet{
-    flex-wrap: wrap;
-    max-width: 50%;
-    min-width: 500px;
-}
 
 /*ID*/
+#projetModule{
+    justify-content: space-around;
+}
 #langageModule{
     flex-direction: row;
     flex-wrap: wrap;

@@ -47,4 +47,8 @@ class Projet{
     {
         return $this->exp;
     }
+    public function GetForm()
+    {
+        return $this->formation;
+    }
 }
