@@ -88,12 +88,29 @@ h1{
     margin: 0;
     text-align: center;
 }
+.blockExp{
+    flex: 0 1 45%; 
+}
+.expG{
+    display: flex;
+}
+.expGInfo{
+    flex: 0 1 60%;
+}
+.expLogoEntr{
+    flex: 0 1 35%;
+}
 
 /*ID*/
 #projetModule{
     justify-content: space-around;
 }
 #langageModule{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#expModule{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
