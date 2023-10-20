@@ -63,9 +63,12 @@ h1{
     flex: 0 1 45%;
     flex-wrap: wrap;
     min-width: 500px;
+    margin: 15px;
 }
 .blockProjetIllu{
-    flex: 0 1 35%;
+    flex: 0 0 30%;
+    object-fit: contain;
+    width: 30%;
 }
 .blockProjetContent{
     flex: 50%;
@@ -89,16 +92,20 @@ h1{
     text-align: center;
 }
 .blockExp{
-    flex: 0 1 45%; 
+    flex: 0 1 45%;
+    margin: 15px;
 }
 .expG{
     display: flex;
+    justify-content: space-between;
 }
 .expGInfo{
     flex: 0 1 60%;
 }
 .expLogoEntr{
     flex: 0 1 35%;
+    object-fit: contain;
+    width: 35%;
 }
 
 /*ID*/

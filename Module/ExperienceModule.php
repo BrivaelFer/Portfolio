@@ -6,7 +6,7 @@
         ?>
             <div class = "blockExp">
                 <div class = "expG">
-                    <img class = "expLogoEntr" src="rsc/img/entreprise/<?php echo $exp->GetEntr()->GetName();?>" 
+                    <img class = "expLogoEntr" src="rsc/img/entreprise/<?php echo $exp->GetEntr()->GetName();?>.png" 
                     alt="Logo <?php echo $exp->GetEntr()->GetName();?>.">
                     <div class="expGInfo">
                         <h3 class = "expTitre"><?php echo $exp->GetTitre();?></h3>
