@@ -57,12 +57,16 @@ h1{
 }
 .module{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 .blockProjet{
     display: flex;
     flex: 0 1 45%;
     flex-wrap: wrap;
-    min-width: 500px;
     margin: 15px;
 }
 .blockProjetIllu{
@@ -107,18 +111,28 @@ h1{
     object-fit: contain;
     width: 35%;
 }
+.expLangTache{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.expLang{
+    flex: 0 1 35%;
+}
+.expTache{
+    flex: 0 1 45%;
+}
+.blockFormation{
+    flex: 0 1 45%;
+    padding: 10px;
+
+}
+.formationImg{
+    float:left;
+    margin: 5px;
+}
 
 /*ID*/
-#projetModule{
-    justify-content: space-around;
-}
 #langageModule{
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-#expModule{
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
 }

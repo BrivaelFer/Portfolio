@@ -26,12 +26,18 @@
                     Un astronaute flotta en apesanteur dans l'espace, contemplant l'infini tout en se demandant ce que l'avenir réserverait à l'humanité.
                 </p>
             </div>
-            <?php
-                $modulManager->AffichageProjet();
-                $modulManager->AffichageLangages();
-                $modulManager->AffichageExperience();
-                $modulManager->AffichageFromation();
-            ?>
+            <section>
+                <?php $modulManager->AffichageProjet();?>
+            </section>
+            <section>
+                <?php $modulManager->AffichageLangages();?>
+            </section>
+            <section>
+                <?php $modulManager->AffichageExperience();?>
+            </section>
+            <section>
+                <?php $modulManager->AffichageFromation();?>
+            </section>
         </div>
     </body>
 </html>
