@@ -15,9 +15,9 @@
         <title>Brivaël FER</title>
     </head>
     <body>
-        <?php include('nav.php') ?>
+        <?php $modulManager->AffichageNav();?>
         <div class='content'>
-            <div class="intro">
+            <div class="intro" id="intro">
                 <p> 
                     Un chat curieux escalada le mur de briques rouges, observant le monde depuis sa position élevée.
                     Les vagues de l'océan se brisaient doucement contre le rivage, comme si la mer chuchotait ses secrets à la plage.
@@ -26,18 +26,19 @@
                     Un astronaute flotta en apesanteur dans l'espace, contemplant l'infini tout en se demandant ce que l'avenir réserverait à l'humanité.
                 </p>
             </div>
-            <section>
+            <section id="projet">
                 <?php $modulManager->AffichageProjet();?>
             </section>
-            <section>
+            <section id="langage">
                 <?php $modulManager->AffichageLangages();?>
             </section>
-            <section>
+            <section id="experience">
                 <?php $modulManager->AffichageExperience();?>
             </section>
-            <section>
+            <section id="fromation">
                 <?php $modulManager->AffichageFromation();?>
             </section>
         </div>
+        <?php $modulManager->AffichageFooter();?>
     </body>
 </html>

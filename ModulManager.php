@@ -4,6 +4,8 @@
     include_once('Module/LangageModul.php');
     include_once('Module/ProjetModule.php');
     include_once('Module/FormationModule.php');
+    include_once('Module/Nav.php');
+    include_once('Module/Footer.php');
     
     class ModulManager
     {
@@ -71,5 +73,13 @@
                 ?>
             </div>
             <?php
+        }
+        public function AffichageNav()
+        {
+            HtmlNav();
+        }
+        public function AffichageFooter()
+        {
+            HtmlFooter();
         }
     }

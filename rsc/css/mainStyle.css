@@ -2,15 +2,23 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15pt;
-    background-color: rgb(17, 26, 19);
+    background-color: rgb(34, 45, 54);
     margin: 0;
     color: white;
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(0, 0, 0);
+    border-top: 3px solid white;
 }
 nav{
     display: flex;
     justify-content: space-between;
     height: 80px;
-    background-color: darkslategray;
+    background-color: black;
 }
 nav div{
     font-size: 18pt;
@@ -21,6 +29,12 @@ nav div{
 }
 nav p{
     margin: auto;
+}
+nav a, footer a{
+    display: block;
+    block-size: fit-content;
+    text-decoration: inherit;
+    color: inherit;
 }
 h1{
     font-size: 20pt;
@@ -130,6 +144,24 @@ h1{
 .formationImg{
     float:left;
     margin: 5px;
+}
+.coordonne{
+    width: 100%;
+}
+.reseaux{
+    display: flex;
+    justify-content:flex-end;
+    padding-right: 20px;
+}
+.reseaux a{
+    margin: 10px;
+}
+.Copyright{
+    grid-area: 4/2;
+}
+footer img:hover{
+    width: 35px;
+    height: 35px;
 }
 
 /*ID*/
