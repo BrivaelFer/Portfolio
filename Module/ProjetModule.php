@@ -6,7 +6,7 @@
         ?>
             <div class = "blockProjet"  href = "">
                 <img class= "blockProjetIllu"
-                src = "rsc/img/projet/<?php echo $pro->GetAdressImg();?>.png" 
+                src = "rsc/img/illu/<?php echo $pro->GetAdressImg();?>.png" 
                 alt = "Image <?php echo $pro->GetTitre();?>.">
                 <div class="blockProjetContent">
                     <h3 class = "blockProjetTitre" ><?php echo $pro->GetTitre();?></h3>
