@@ -14,8 +14,12 @@ function HtmlFooter()
             </p>
         </div>
         <div class="reseaux">
-                <a href="https://github.com/BrivaelFer"><img class="tinyImg" src="rsc/img/logos/logoGithub.png" alt="github"></a>
-                <a href="https://www.linkedin.com/in/brivael-fer"><img class="tinyImg" src="rsc/img/logos/logoLinkedin.png" alt="linkedin"></a>
+                <a href="https://github.com/BrivaelFer">
+                    <img class="tinyImg" src="rsc/img/logos/logoGithub.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/brivael-fer">
+                    <img class="tinyImg" src="rsc/img/logos/logoLinkedin.png" alt="linkedin">
+                </a>
         </div>
 
         <div class='Copyright'>

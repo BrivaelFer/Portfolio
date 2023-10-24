@@ -3,7 +3,7 @@ function HtmlNav()
 {
     ?>
     <nav>
-        <div>
+        <div id='button_intro'>
             <a href="#intro"><h1>Brivaël FER</h1></a>
         </div>
         <div>

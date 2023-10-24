@@ -17,7 +17,7 @@
     <body>
         <?php $modulManager->AffichageNav();?>
         <div class='content'>
-            <div class="intro" id="intro">
+            <div class="intro section_content" id="intro">
                 <p> 
                     Un chat curieux escalada le mur de briques rouges, observant le monde depuis sa position élevée.
                     Les vagues de l'océan se brisaient doucement contre le rivage, comme si la mer chuchotait ses secrets à la plage.
@@ -27,16 +27,24 @@
                 </p>
             </div>
             <section id="projet">
-                <?php $modulManager->AffichageProjet();?>
+                <div class='section_content'>
+                    <?php $modulManager->AffichageProjet();?>
+                </div>
             </section>
             <section id="langage">
-                <?php $modulManager->AffichageLangages();?>
+                <div class='section_content'>
+                    <?php $modulManager->AffichageLangages();?>
+                </div>
             </section>
             <section id="experience">
-                <?php $modulManager->AffichageExperience();?>
+                <div class='section_content'>
+                    <?php $modulManager->AffichageExperience();?>
+                </div>
             </section>
             <section id="fromation">
-                <?php $modulManager->AffichageFromation();?>
+                <div class='section_content'>
+                    <?php $modulManager->AffichageFromation();?>
+                </div>
             </section>
         </div>
         <?php $modulManager->AffichageFooter();?>

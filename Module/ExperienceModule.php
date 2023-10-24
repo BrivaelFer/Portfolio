@@ -10,9 +10,8 @@
                     alt="Logo <?php echo $exp->GetEntr()->GetName();?>.">
                     <div class="expGInfo">
                         <h3 class = "expTitre"><?php echo $exp->GetTitre();?></h3>
-                        <h4 class = "expNameEntr"><?php echo $exp->GetEntr()->GetName();?></h4>
-                        <p class = "expAdressEntr"><?php echo $exp->GetEntr()->GetAdress();?></p>
-                        <p class = "expTache"></p>
+                        <h4 class = "expNameEntr"><?php echo $exp->GetEntr()->GetName();?> - <?php echo $exp->GetEntr()->GetAdress();?></h4>
+                        <p class = "expAdressEntr"></p>
                     </div>
                 </div>
                 <div class="expLangTache">
