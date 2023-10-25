@@ -41,7 +41,7 @@
                     <?php $modulManager->AffichageExperience();?>
                 </div>
             </section>
-            <section id="fromation">
+            <section id="formation">
                 <div class='section_content'>
                     <?php $modulManager->AffichageFromation();?>
                 </div>

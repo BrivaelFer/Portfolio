@@ -11,7 +11,7 @@ function HtmlFormation(Formation $fromation)
         alt="Logo <?php echo $fromation->GetOrga()->GetNom(); ?>">
         <h4><?php echo $fromation->GetOrga()->GetNom()." ".$fromation->GetOrga()->GetVille(); ?></h4>
         <p class='dateFrom'>
-            Débuts: <?php echo $fromation->GetStratDate(); ?> </br>
+            Débuts: <?php echo $fromation->GetStratDate(); ?> <br>
             Fin : 
             <?php 
                 if($fromation->GetEnd())

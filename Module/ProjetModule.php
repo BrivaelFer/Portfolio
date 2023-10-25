@@ -4,7 +4,7 @@
    function HtmlProjet(Projet $pro)
    {
         ?>
-            <div class = "blockProjet"  href = "">
+            <div class = "blockProjet" >
                 <img class= "blockProjetIllu"
                 src = "rsc/img/illu/<?php echo $pro->GetAdressImg();?>.png" 
                 alt = "Image <?php echo $pro->GetTitre();?>.">
@@ -18,7 +18,7 @@
                                     foreach($pro->GetLangs() as $key => $lang)
                                     {
                                         ?>
-                                        <div class = "blockLangMini" href = "">
+                                        <div class = "blockLangMini">
                                             <img class="tinyImg" src="rsc/img/logos/<?php echo $lang->GetImg();?>.png" 
                                             alt="Logo <?php echo $lang->GetName();?>">
                                             <p class = "nameLangMini"><?php echo $lang->GetName();?></p>

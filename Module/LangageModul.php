@@ -4,7 +4,7 @@
     function HtmlLang(Langage $lang)
     {
         ?>
-            <div class = "blockLangage"  href = "">
+            <div class = "blockLangage">
                 <img class= "logoLang"
                 src = "rsc/img/logos/<?php echo $lang->GetImg();?>.png" 
                 alt = "Logo <?php echo $lang->GetName();?>.">

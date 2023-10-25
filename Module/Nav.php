@@ -13,7 +13,7 @@ function HtmlNav()
             <a href="#langage">Langages</a>
         </div>
         <div>
-            <a href="#experice">Experiences</a>
+            <a href="#experience">Experiences</a>
         </div>
         <div>
             <a href="#formation">Formations</a>
