@@ -38,7 +38,7 @@
                             ?>
                             <div class="infoLieuProd" >
                                 <h4>Lieu de production:</h4>
-                                <img src="rsc/img/Logo/<?php echo $lProd->GetEntr()->GetName();?>"
+                                <img class="tinyImg" src="rsc/img/entreprise/<?php echo $lProd->GetEntr()->GetName();?>.png"
                                 alt="logo <?php echo $lProd->GetEntr()->GetName();?>">
                                 <p>
                                     <?php echo $lProd->GetEntr()->GetName();?> - 
